@@ -1,0 +1,241 @@
+
+
+/* JAVACRIPT: Micro-interactie 1. Zoek functie */
+
+var zoek_knop = document.getElementsByClassName("searchimg")[0];
+
+var search_balk = document.getElementsByClassName("search-container")[0];
+
+function laat_balk_zien(){
+    search_balk.classList.toggle("active");
+}
+
+zoek_knop.addEventListener("click", laat_balk_zien);
+
+
+
+
+/* Micro-interactie 2.Chat functie */
+
+var chat_knop = document.getElementById("chat-knop");
+var chat_formulier = document.getElementById("chat-container");
+
+function laat_chat_zien(){
+    chat_formulier.classList.toggle("active");
+}
+
+chat_knop.addEventListener("click", laat_chat_zien);
+
+
+
+
+
+/* Micro-interactie 3. Load login */
+var login_knop = document.getElementsByClassName("aanmelden")[0];
+var logo = document.getElementsByClassName("logo")[0];
+
+function draai_logo(){
+    logo.classList.toggle("active");
+}
+
+login_knop.addEventListener("click", draai_logo);
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inloggen</title>
+    <link rel="stylesheet" href="main1.css">
+</head>
+
+<body class="bodyaanmeld">
+       
+        
+         <header class="headeraanmeld"> 
+                <a href="overzichtspagina.html"><img class="transavialogomenu" src="Images/logo.transavia.menu.png" alt="logo"></a>
+                
+            <nav>
+                <ul>
+                    <li><a href="overzichtspagina.html">Nurks</a></li>
+                    <li><a href="verhalenvlag.html">Vlag</a></li>
+                    <li><a href="aanmelden.html">Inloggen</a></li>
+                    <!-- Micro interactie 1. Knop START-->
+                    <li><a href="#"><img class="searchimg" src="Images/search.png"
+                    ></a></li>
+                     <!-- Micro interactie 1. Knop EINDE -->
+                </ul>
+            </nav>
+       </header>
+       <!-- Micro interactie 1. Formulier START-->
+       <div class="search-container">
+        <form>
+            <input type="text">
+        </form>
+    </div>
+       <!-- Micro interactie 1. Formulier EINDE -->
+       
+       
+<img class="logo" src="Images/transmaffia.logo.png" alt="transavia_logo">
+
+
+<div class="grootblokaanmeld">
+
+
+ 
+ <section class="blokaanmeld">
+ 
+  
+<!-- <form name="login" action="index_submit" method="get">-->
+
+ 
+   <fieldset>
+      
+    <h1 class="h1aanmeld">Inloggen</h1>
+       
+       <img src="Images/question-mark.png" alt="ask" class="ask">
+        
+        <label class="labelaanmeld" for="voornaam">Vul je laatste boeking nummer in</label>
+        <input id="voornaam" class="inputaanmeld" type="text" name="voornaam" placeholder="b.v. BRN123" required>
+           
+        
+        <label class="labelaanmeld" for="vluchtnummer">Vul je voornaam in</label>
+        <input id="vluchtnummer" class="inputaanmeld" type="text" name="vluchtnummer" placeholder="b.v. Peter" required>
+       
+        
+        <label class="labelaanmeld" for="achternaam">Vul je achternaam in</label>
+        <input id="achternaam" class="inputaanmeld" type="text" name="stoelnummer" placeholder="b.v. Jansen" required>
+        
+          
+        <label class="labelingelogd" for="ingelogd">Blijf ingelogd</label>
+        <input class="ingelogd" id="ingelogd" type="checkbox">
+         
+         <!-- Micro interactie 3. LOGINKNOP START -->
+        <input class="button aanmelden" type="submit" value="Inloggen">
+         <!-- Micro interactie 3. LOGINKNOP EINDE -->
+         
+     </fieldset>
+
+<!--</form>-->
+
+</section>
+
+
+    <!-- Micro interactie 3. LOGODRAAI START-->
+    <img class="logo2" src="Images/logo.transavia.liggend.png" alt="transavia_logo2">
+    <!-- Micro interactie 3. LOGODRAAI EINDE-->
+
+  <div class="zoekenaanmeld">
+        
+   <div class="zoeken2">   
+    <label for="zoekwoorden">Kunnen wij je helpen?</label>
+    <input id="zoekwoorden" type="text" name="doorzoeken" placeholder="typ je zoekwoorden" required>
+   </div>
+      
+       
+        <input class="button" type="submit" value="Zoeken">
+    
+    </div>
+    
+  </div>
+   <!-- Micro interactie 2. CHATKNOP START-->
+   <a class="scrolltop" id="chat-knop"> <div class="pijl"><img src="images/speach-bubbel.png"></div></a>
+   <!-- Micro interactie 2. CHATKNOP EINDE-->
+   <!-- Micro interactie 2. CHATFORMULIER START-->
+   <div class="chat-container" id="chat-container">
+         <h3>Stuur ons een email</h3>
+            <form>
+               <input type="text" placeholder="Vul hier uw naam in">
+               <input type="email" placeholder="Vul hier uw email in">
+               <input type="text" placeholder="Opmerking..">
+               <input type="submit" value="Versturen">
+               
+           </form>
+       </div>
+       <!-- Micro interactie 2. CHATFORMULIER EINDE-->
+   
+<!--     <script type="text/javascript" src="overzichtspagina.js" ></script>-->
+     <script type="text/javascript" src="micro-trans.js" ></script>
+    
+</body>
+
+</html>
+
+
+
+
+
+/* CSS voor Javascript interactie 1 */
+.searchimg
+{
+    width: 20px;
+}
+.search-container {
+    position: absolute;
+    right: 60px;
+    top: 0;
+    z-index: 0;
+    transition: 1s all;
+}
+.search-container.active {
+    top: 58px;
+}
+header{
+    z-index: 1;
+}
+
+
+
+/* CSS voor Javascript interactie 2 */
+
+.chat-container {
+    position: fixed;
+    bottom: -320px;
+    right: 0;
+    padding: 20px;
+    background: #ededed;
+    border-radius: 10px;
+    border: 1px solid rgb(145, 163, 183);
+    transition: 1s all;
+}
+.chat-container.active {
+     bottom: 55px;   
+}
+.chat-container input {margin: 10px 0;}
+
+.pijl{
+    margin: 5px;
+    padding: 0;
+}
+.pijl img{
+    max-width: 100%;
+}
+
+.chat-container h3 {
+    
+font-family: "Nexa Bold";
+    color: #2800a0;
+}
+
+
+/* CSS voor Javascript interactie 3 */
+.logo{
+    transition: 1s all;
+}
+
+.logo.active{
+    transform: rotate(3600deg);
+}
+
+/* Einde styling zelfgemaakte verhalen */
+
